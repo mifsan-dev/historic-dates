@@ -2,6 +2,10 @@ import "@/app/styles/global.scss";
 
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(useGSAP);
 
 const container = document.getElementById("root");
 
