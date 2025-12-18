@@ -1,0 +1,15 @@
+$circle-color: #42567a1a;
+
+.circle {
+  position: relative;
+  width: 530px;
+  height: 530px;
+  border-radius: 50%;
+  border: 1px $circle-color solid;
+
+  &Item {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    transform-origin: center;
+  }
+}

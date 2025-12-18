@@ -1,0 +1,44 @@
+$color: #42567a;
+$border-color: #42567a80;
+
+.numbers {
+  font-size: 14px;
+  color: $color;
+}
+
+.arrowsContainer {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.arrow {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px $border-color solid;
+  cursor: pointer;
+
+  &Disabled {
+    opacity: 50%;
+  }
+}
+
+.mobile {
+  .arrowsContainer {
+    margin-top: 7px;
+    gap: 6px;
+  }
+  .arrow {
+    height: 25px;
+    width: 25px;
+
+    svg.icon {
+      transform: scale(0.4464);
+    }
+  }
+}

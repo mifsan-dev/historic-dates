@@ -1,0 +1,94 @@
+$title-color: #3877ee;
+$description-color: #42567a;
+$line-break-color: #c7cdd9;
+
+.container {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  &Visible {
+    opacity: 1;
+  }
+}
+
+.legendsWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.legend {
+  margin-right: 80px;
+  box-sizing: content-box;
+  &:nth-child(2n) {
+    max-width: 400px;
+  }
+  max-width: 320px;
+
+  .title {
+    font-size: 25px;
+    font-family: "Bebas Neue";
+    line-height: 120%;
+    color: $title-color;
+  }
+  .description {
+    margin: 13px 0 0 0;
+    font-size: 20px;
+    line-height: 150%;
+    color: #42567a;
+  }
+}
+.arrowContainer {
+  display: flex;
+  min-width: 80px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.arrow {
+  all: unset;
+  top: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(56, 119, 238, 0.1);
+  cursor: pointer;
+
+  &Left {
+    transform: scaleX(-1);
+  }
+}
+
+.swiper {
+  margin: 0;
+}
+
+.mobile {
+  .mobileTitle {
+    display: block;
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: bold;
+    color: $description-color;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px $line-break-color solid;
+  }
+  .legend {
+    margin-right: 25px;
+    max-width: 166px;
+    &:nth-child(2n) {
+      max-width: 255px;
+    }
+    .title {
+      font-size: 16px;
+    }
+    .description {
+      font-size: 14px;
+      line-height: 145%;
+    }
+  }
+}

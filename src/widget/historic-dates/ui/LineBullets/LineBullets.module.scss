@@ -1,0 +1,20 @@
+$bullet-color: #42567a;
+
+.container {
+  display: flex;
+  gap: 10px;
+}
+
+.bullet {
+  all: unset;
+  height: 6px;
+  width: 6px;
+  background: $bullet-color;
+  opacity: 0.4;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &Active {
+    opacity: 1;
+  }
+}

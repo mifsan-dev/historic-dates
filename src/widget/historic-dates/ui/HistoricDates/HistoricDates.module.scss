@@ -1,0 +1,157 @@
+$title-color: #42567a;
+$border-color: #42567a1a;
+$spacing-left: 80px;
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 2fr auto 1fr;
+  &::after {
+    content: "";
+    display: block;
+  }
+  &::before {
+    content: "";
+    display: block;
+  }
+}
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 1440px;
+  padding: 170px 0 104px 0;
+  border-left: 1px $border-color solid;
+  border-right: 1px $border-color solid;
+  overflow: hidden;
+  &::before {
+    content: " ";
+    position: absolute;
+    display: block;
+    left: 50%;
+    height: 100%;
+    border-left: 1px $border-color solid;
+    transform: translateX(50%);
+  }
+
+  .title {
+    order: 1;
+  }
+
+  .yearsCircleContainer {
+    order: 2;
+  }
+
+  .arrowsBulletsContainer {
+    order: 3;
+    margin-top: 56px;
+    margin-left: $spacing-left;
+  }
+
+  .swiperLegend {
+    order: 4;
+    margin-top: 56px;
+  }
+}
+
+.title {
+  margin: 0;
+  position: relative;
+  padding: 0 0 0 $spacing-left;
+  font-weight: bold;
+  line-height: 120%;
+  font-size: 56px;
+  color: $title-color;
+  span {
+    display: block;
+  }
+  &::before {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: block;
+    height: 120px;
+    width: 5px;
+    background: linear-gradient(to bottom, #3877ee, #ef5da8);
+    transform: translateY(-50%);
+  }
+}
+
+.yearsCircleContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 19px;
+  margin-right: 35px;
+  &::before {
+    content: " ";
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 50%;
+    border-bottom: 1px $border-color solid;
+    transform: translateY(50%);
+    z-index: -1;
+  }
+
+  .circle {
+    position: absolute;
+    top: calc(50%);
+    left: calc(50% + 18px);
+    transform: translate(-50%, -50%);
+  }
+}
+
+.mobile.wrapper {
+  grid-template-columns: 0fr auto 0fr;
+  .container {
+    width: auto;
+    height: 568px;
+    padding: 58px 0 13.33px 20px;
+    &::before {
+      display: none;
+    }
+
+    .title {
+      order: 1;
+    }
+
+    .yearsCircleContainer {
+      order: 2;
+    }
+
+    .arrowsBulletsContainer {
+      position: relative;
+      order: 4;
+      margin-left: 0;
+      margin-top: 20px;
+    }
+
+    .lineBullets {
+      position: absolute;
+      left: calc(50% - 11px);
+      top: calc(50% + 4px);
+      transform: translate(-50%, -50%);
+    }
+
+    .swiperLegend {
+      order: 3;
+      margin-top: auto;
+      margin-bottom: 37px;
+    }
+  }
+  .title {
+    font-size: 20px;
+    padding: 0;
+    &::before {
+      display: none;
+    }
+  }
+  .yearsCircleContainer {
+    justify-content: flex-start;
+    margin: 45px 0 0 0;
+    &::before {
+      display: none;
+    }
+  }
+}

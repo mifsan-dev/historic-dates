@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const isProd = process.env.NODE_ENV === "production";
 
 module.exports = {
-  entry: "./src/app/entry-point/index.tsx",
+  entry: "./src/app/ui/index.tsx",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: isProd ? "[name].[contenthash].js" : "bundle.js",
@@ -27,6 +27,11 @@ module.exports = {
         exclude: /node_modules/
       },
 
+      {
+        test: /\.svg$/,
+        use: ["@svgr/webpack"]
+      },
+
       // Sass Modules
       {
         test: /\.module\.s[ac]ss$/,
@@ -43,7 +48,23 @@ module.exports = {
             }
           },
           "postcss-loader",
-          "sass-loader"
+          {
+            loader: "sass-loader",
+            options: {
+              implementation: require("sass"),
+              sassOptions: {
+                quietDeps: true
+              }
+            }
+          }
+        ]
+      },
+
+      {
+        test: /\.css$/,
+        use: [
+          isProd ? MiniCssExtractPlugin.loader : "style-loader",
+          "css-loader"
         ]
       },
 

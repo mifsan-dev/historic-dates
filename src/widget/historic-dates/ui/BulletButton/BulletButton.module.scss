@@ -1,0 +1,58 @@
+$border-color: #303e5880;
+$background-color: #f4f5f9;
+$text-color: #42567a;
+
+.container {
+  all: unset;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $text-color;
+  cursor: pointer;
+  width: 56px;
+  height: 56px;
+
+  &:hover .circle,
+  & .circleActive {
+    width: 56px;
+    height: 56px;
+    overflow: visible;
+    background: $background-color;
+    border: 1px $border-color solid;
+  }
+}
+
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 6px;
+  width: 6px;
+  background: $text-color;
+  font-size: 20px;
+  border-radius: 50%;
+  line-height: 150%;
+  overflow: hidden;
+  transition:
+    width 0.3s ease,
+    height 0.3s ease,
+    background 0.3s ease;
+}
+
+.title {
+  position: absolute;
+  padding-left: 20px;
+  left: 100%;
+  top: 50%;
+  font-size: 20px;
+  line-height: 150%;
+  font-weight: bold;
+  transform: translateY(-50%);
+  opacity: 0;
+
+  &Visible {
+    transition: opacity 0.5s ease 1s;
+    opacity: 1;
+  }
+}
