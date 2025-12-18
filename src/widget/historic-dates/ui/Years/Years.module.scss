@@ -1,0 +1,26 @@
+$left-date-color: #5d5fef;
+$right-date-color: #ef5da8;
+.container {
+  display: flex;
+  gap: 93px;
+}
+.year {
+  font-size: 200px;
+  font-weight: bold;
+  line-height: 160%;
+  letter-spacing: -0.02em;
+
+  &Left {
+    color: $left-date-color;
+  }
+  &Right {
+    color: $right-date-color;
+  }
+}
+
+.mobile.container {
+  gap: 16px;
+  .year {
+    font-size: 56px;
+  }
+}

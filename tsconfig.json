@@ -10,7 +10,8 @@
     "skipLibCheck": true,
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "types": ["@svgr/webpack"]
   },
   "include": ["src"],
   "exclude": ["webpack.config.js", "postcss.config.js", ".eslintrc.js"]
